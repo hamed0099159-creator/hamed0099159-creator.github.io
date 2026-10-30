@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>چاپ سه‌بعدی | نمونه‌کارها</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js"
+  }
+}
+</script>
+</head>
+<body>
+
+<!-- نوار بالای سایت -->
+<header class="nav">
+  <div class="nav-inner">
+    <div class="logo">
+      <span class="logo-mark"></span>
+      <span class="logo-text">پرینت<b>سه‌بعد</b></span>
+    </div>
+    <nav class="nav-links">
+      <a href="#gallery">نمونه‌کارها</a>
+      <a href="#services">خدمات</a>
+      <a href="#contact">تماس</a>
+    </nav>
+    <a href="#contact" class="nav-cta">سفارش چاپ</a>
+  </div>
+</header>
+
+<!-- هدر اصلی -->
+<section class="hero">
+  <div id="scene3d"></div>
+  <div class="hero-content">
+    <div class="hero-badge">✦ ایده‌ات را لمس کن</div>
+    <h1>از پیکسل تا<br><span class="grad">واقعیت سه‌بعدی</span></h1>
+    <p>نمونه‌کارهای چاپ سه‌بعدی — از ماکت معماری و قطعات صنعتی تا مجسمه‌های سفارشی و لوازم جانبی.</p>
+    <div class="hero-actions">
+      <a href="#gallery" class="btn btn-primary">مشاهده نمونه‌کارها</a>
+      <a href="#contact" class="btn btn-ghost">ثبت سفارش</a>
+    </div>
+    <div class="hero-stats">
+      <div><b>+۱۵۰</b><span>پروژه چاپ‌شده</span></div>
+      <div><b>۲۴ساعت</b><span>تحویل فوری</span></div>
+      <div><b>۰.۱میلی‌متر</b><span>دقت چاپ</span></div>
+    </div>
+  </div>
+  <div class="scroll-hint">↓</div>
+</section>
+
+<!-- گالری نمونه‌کارها -->
+<section id="gallery" class="section">
+  <div class="container">
+    <div class="section-head">
+      <h2>نمونه‌کارها</h2>
+      <p>یه نکته به کارها بنداز — روش کلیک کن تا بزرگ ببینی‌ش</p>
+    </div>
+    <div class="filters" id="filters">
+      <button class="filter active" data-f="all">همه</button>
+      <button class="filter" data-f="arch">ماکت معماری</button>
+      <button class="filter" data-f="proto">قطعه و نمونه اولیه</button>
+      <button class="filter" data-f="art">مجسمه و دکور</button>
+      <button class="filter" data-f="gadget">گجت و لوازم</button>
+    </div>
+    <div class="grid" id="grid"></div>
+  </div>
+</section>
+
+<!-- خدمات -->
+<section id="services" class="section section-alt">
+  <div class="container">
+    <div class="section-head">
+      <h2>چیکارها می‌تونم برات بکنم؟</h2>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <div class="card-icon">🏗️</div>
+        <h3>ماکت معماری</h3>
+        <p>ماکت دقیق ساختمان و دکوراسیون داخلی با جزئیات بالا و مقیاس دلخواه.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">⚙️</div>
+        <h3>نمونه اولیه</h3>
+        <p>تبدیل فایل CAD به قطعه‌ی فیزیکی برای تست و نمایش قبل از تولید انبوه.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🎨</div>
+        <h3>مجسمه و دکور</h3>
+        <p>چاپ مجسمه، فیگور و وسایل دکوری سفارشی با فیلمنت رنگی و رزین.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🔧</div>
+        <h3>قطعات جانبی</h3>
+        <p>ساخت قطعات یدکی سخت‌یاب، براکت، قاب و نگهدارنده‌های سفارشی.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- تماس -->
+<section id="contact" class="section">
+  <div class="container">
+    <div class="section-head">
+      <h2>سفارش چاپ</h2>
+      <p>ایده‌ات رو بفرست، ظرف چند ساعت جواب می‌دم</p>
+    </div>
+    <form class="contact-form" id="contactForm">
+      <div class="form-row">
+        <input type="text" id="name" placeholder="اسم تو" required>
+        <input type="text" id="phone" placeholder="شماره تماس یا آیدی" required>
+      </div>
+      <select id="type">
+        <option value="">نوع سفارش…</option>
+        <option>ماکت معماری</option>
+        <option>قطعه و نمونه اولیه</option>
+        <option>مجسمه و دکور</option>
+        <option>قطعه جانبی</option>
+        <option>چیز دیگه</option>
+      </select>
+      <textarea id="desc" rows="4" placeholder="توضیح کوتاه درباره چیزی که می‌خوای چاپ بشه…"></textarea>
+      <button type="submit" class="btn btn-primary btn-wide">ارسال درخواست</button>
+      <p class="form-msg" id="formMsg"></p>
+    </form>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="logo">
+      <span class="logo-mark"></span>
+      <span class="logo-text">پرینت<b>سه‌بعد</b></span>
+    </div>
+    <p>© ۱۴۰۵ — همه چیز با عشق و فیلامنت ساخته شده 🔥</p>
+  </div>
+</footer>
+
+<!-- مودال بزرگ‌نمایی -->
+<div class="modal" id="modal">
+  <div class="modal-box">
+    <button class="modal-close" id="modalClose">✕</button>
+    <img id="modalImg" src="" alt="">
+    <div class="modal-info">
+      <h3 id="modalTitle"></h3>
+      <p id="modalDesc"></p>
+      <span class="modal-tag" id="modalTag"></span>
+    </div>
+  </div>
+</div>
+
+<script type="module" src="script.js"></script>
+</body>
+</html>
